@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+    aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
+  <div class="collapse navbar-collapse" id="collapsibleNavId">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">Dropdown</a>
+        <div class="dropdown-menu" aria-labelledby="dropdownId">
+          <a class="dropdown-item" href="#">Action 1</a>
+          <a class="dropdown-item" href="#">Action 2</a>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+<div class="row ml-2 mt-2">
+  <div class="col-md-6">
+    <form>
+      <div class="form-group">
+        <label for="nombreInput">Nombre Alumno</label>
+        <input type="text" class="form-control" id="nombreInput" placeholder="nombre">
+      </div>
+      <div class="form-group">
+        <label for="apellidoInput">Apellido</label>
+        <input type="text" class="form-control" id="apellidoInput" placeholder="apelido">
+      </div>
+      <div class="form-group">
+        <label for="nota1Input">Nota 1</label>
+        <input type="number" class="form-control" id="nota1Input" placeholder="Nota 1">
+      </div>
+      <div class="form-group">
+        <label for="nota2Input">Nota 2</label>
+        <input type="number" class="form-control" id="nota1Input" placeholder="Nota 2">
+      </div>
+      <div class="form-group">
+        <label for="nota3Input">Nota 3</label>
+        <input type="number" class="form-control" id="nota3Input" placeholder="Nota 3">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  <div class="col-md-6">
+    <div class="card">
+      <canvas id="realtime">{{ chartRealtime }}</canvas>
+      <div class="card-content">
+        <h3>Realtime</h3>
+        <p>Esta gráfica muestra información en tiempo real</p>
+      </div>
+    </div>
+  </div>
+</div>
