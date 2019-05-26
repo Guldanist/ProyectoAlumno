@@ -1,6 +1,7 @@
 // importando las rutas
 // import { servicio_router } from './api/routes/servicio';
-// import { playa_router } from './api/routes/playa';
+import { auth_router } from './api/routes/auth';
+import { alumno_router } from './api/routes/alumno';
 // import { registro_router } from './api/routes/registro';
 
 import { sequelize } from './api/config/sequelize';
@@ -15,7 +16,7 @@ var app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-const PUERTO = process.env.PORT || 3000;
+const PUERTO = process.env.PORT || 3001;
 // CONFIGURANDO EL CORS
 app.use((req:Request,res:Response,next:NextFunction)=>{
     res.header('Access-Control-Allow-Origin','http://localhost:4200');
@@ -27,16 +28,18 @@ app.use((req:Request,res:Response,next:NextFunction)=>{
 
 // usando las rutas importadas
 // app.use('/api', servicio_router);
-// app.use('/api', playa_router);
+app.use('/api', alumno_router);
 // app.use('/api', registro_router);
-// app.use('/api', auth_router);
+app.use('/api', auth_router);
 
 
 app.listen(PUERTO, function () {
-    console.log("Servidor corriendo correctamente en el puerto 3000");
+    console.log(`Servidor corriendo correctamente en el puerto  ${PUERTO}`);
     
     sequelize.sync({ force: false }).then(() => {
         console.log("Base de datos creada con éxito");
+        console.log(`Servidor corriendo correctamente en el puerto  ${PUERTO}`);
+        
     }).catch((error:any) => {
         console.log(error);
         console.log("Error al crear la base de datos");
