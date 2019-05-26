@@ -26,12 +26,24 @@ export var alumno_controller = {
         })
     },
     getAllAlumnos:(req:Request,res:Response)=>{
+        Alumno.findAll().then((respuesta:any)=>{
+            let response = {
+                message:"ok",
+                content:respuesta
+            }
+            res.status(200).json(response);
+        });
+    },
+
+    CountAlumnos:(req:Request,res:Response)=>{
         Alumno.findAll({
-            include:[
-                {
-                    model:Matricula,
-                }
+            attributes: [
+                [sequelize.fn(
+                                'COUNT', sequelize.col('alumno_id')
+                             ), 'alumno_id'
+                ]
             ],
+            
         }).then((respuesta:any)=>{
             let response = {
                 message:"ok",
@@ -40,4 +52,6 @@ export var alumno_controller = {
             res.status(200).json(response);
         });
     }
+
+
 }

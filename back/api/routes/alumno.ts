@@ -5,3 +5,4 @@ export var alumno_router = Router();
 
 alumno_router.get('/alumno/:alumno_id/',alumno_controller.getAllAlumnosById);
 alumno_router.get('/alumno',alumno_controller.getAllAlumnos);
+alumno_router.get('/alumnostot',alumno_controller.CountAlumnos);

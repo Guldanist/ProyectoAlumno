@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const sequelize_1 = require("./../config/sequelize");
-const sequelize_2 = require("./../config/sequelize");
 let sequelize = require('sequelize');
 exports.alumno_controller = {
     /**
@@ -24,11 +23,19 @@ exports.alumno_controller = {
         });
     },
     getAllAlumnos: (req, res) => {
+        sequelize_1.Alumno.findAll().then((respuesta) => {
+            let response = {
+                message: "ok",
+                content: respuesta
+            };
+            res.status(200).json(response);
+        });
+    },
+    CountAlumnos: (req, res) => {
         sequelize_1.Alumno.findAll({
-            include: [
-                {
-                    model: sequelize_2.Matricula,
-                }
+            attributes: [
+                [sequelize.fn('COUNT', sequelize.col('alumno_id')), 'alumno_id'
+                ]
             ],
         }).then((respuesta) => {
             let response = {

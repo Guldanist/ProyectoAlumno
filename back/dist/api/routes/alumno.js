@@ -6,3 +6,4 @@ const express_1 = require("express");
 exports.alumno_router = express_1.Router();
 exports.alumno_router.get('/alumno/:alumno_id/', alumno_1.alumno_controller.getAllAlumnosById);
 exports.alumno_router.get('/alumno', alumno_1.alumno_controller.getAllAlumnos);
+exports.alumno_router.get('/alumnostot', alumno_1.alumno_controller.CountAlumnos);
