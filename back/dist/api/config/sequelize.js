@@ -15,11 +15,14 @@ exports.sequelize = new Sequelize("xN27P3h8XM", "xN27P3h8XM", "3OJolLXRRw", {
 exports.Alumno = alumno_1.alumno_model(exports.sequelize, Sequelize);
 exports.Curso = curso_1.curso_model(exports.sequelize, Sequelize);
 exports.Notas = notas_1.notas_model(exports.sequelize, Sequelize);
+// export const Usuario = usuario_model(sequelize,Sequelize);
 exports.Semestre = semestre_1.semestre_model(exports.sequelize, Sequelize);
 exports.Matricula = matricula_1.matricula_model(exports.sequelize, Sequelize);
 //En el modelo PlayaServicio va a crear un campo de nombre 'playa_id'
 //este campo será la clave foranea que una PlayaServicio con Playa
-exports.Matricula.belongsTo(exports.Alumno, { foreignKey: 'alumno_id' });
+// Matricula.belongsTo(Alumno, { foreignKey: 'alumno_id' , as: 'B' });
 exports.Matricula.belongsTo(exports.Curso, { foreignKey: 'curso_id' });
-exports.Matricula.belongsTo(exports.Notas, { foreignKey: 'notas_id' });
+// Matricula.belongsTo(Notas, { foreignKey: 'notas_id' , as: 'C' });
 exports.Matricula.belongsTo(exports.Semestre, { foreignKey: 'semestre_id' });
+exports.Matricula.hasMany(exports.Notas, { foreignKey: 'notas_id', as: 'C' });
+exports.Matricula.hasMany(exports.Alumno, { foreignKey: 'alumno_id', as: 'B' });

@@ -2,7 +2,7 @@
 // import { servicio_router } from './api/routes/servicio';
 import { auth_router } from './api/routes/auth';
 import { alumno_router } from './api/routes/alumno';
-// import { registro_router } from './api/routes/registro';
+import { matricula_router } from './api/routes/matricula';
 
 import { sequelize } from './api/config/sequelize';
 import { NextFunction, Request, Response } from 'express';
@@ -29,7 +29,7 @@ app.use((req:Request,res:Response,next:NextFunction)=>{
 // usando las rutas importadas
 // app.use('/api', servicio_router);
 app.use('/api', alumno_router);
-// app.use('/api', registro_router);
+app.use('/api', matricula_router);
 app.use('/api', auth_router);
 
 

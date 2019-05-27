@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "proyecto-alumno": {
+    "playas": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/proyecto-alumno",
+            "outputPath": "dist/playas",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -58,18 +58,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "proyecto-alumno:build"
+            "browserTarget": "playas:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "proyecto-alumno:build:production"
+              "browserTarget": "playas:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "proyecto-alumno:build"
+            "browserTarget": "playas:build"
           }
         },
         "test": {
@@ -103,7 +103,7 @@
         }
       }
     },
-    "proyecto-alumno-e2e": {
+    "playas-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -112,11 +112,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "proyecto-alumno:serve"
+            "devServerTarget": "playas:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "proyecto-alumno:serve:production"
+              "devServerTarget": "playas:serve:production"
             }
           }
         },
@@ -132,5 +132,5 @@
       }
     }
   },
-  "defaultProject": "proyecto-alumno"
+  "defaultProject": "playas"
 }

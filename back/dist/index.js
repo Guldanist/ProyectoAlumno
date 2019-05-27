@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // import { servicio_router } from './api/routes/servicio';
 const auth_1 = require("./api/routes/auth");
 const alumno_1 = require("./api/routes/alumno");
-// import { registro_router } from './api/routes/registro';
+const matricula_1 = require("./api/routes/matricula");
 const sequelize_1 = require("./api/config/sequelize");
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 // usando las rutas importadas
 // app.use('/api', servicio_router);
 app.use('/api', alumno_1.alumno_router);
-// app.use('/api', registro_router);
+app.use('/api', matricula_1.matricula_router);
 app.use('/api', auth_1.auth_router);
 app.listen(PUERTO, function () {
     console.log(`Servidor corriendo correctamente en el puerto  ${PUERTO}`);
